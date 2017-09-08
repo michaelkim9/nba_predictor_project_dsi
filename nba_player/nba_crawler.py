@@ -326,6 +326,8 @@ def generate_nba_player_df(first_letter):
         'tov',
         'pf',
         'all_star',
+        'per',
+        'ws',
         'recent_salary',
         'salary_year',
         'salary_team'
