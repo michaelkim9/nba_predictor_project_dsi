@@ -13,7 +13,7 @@ DATABASE: basketball
         TRB -- Total Rebounds -- INTEGER
         AST -- Assists -- INTEGER
         FG_Perc -- Field Goal Percentage -- FLOAT
-        3P_Perc -- 3-Point Field Goal Percentage -- FLOAT
+        Three_Perc -- 3-Point Field Goal Percentage -- FLOAT
         FT_Perc -- Free Throw Percentage -- FLOAT
         MP_1 -- Minutes Played Per Game -- INTEGER
         PTS_per_G -- Points Per Game -- FLOAT
@@ -32,12 +32,12 @@ DATABASE: basketball
     TABLE: team_salary
         Player -- Player Name -- TEXT
         Team -- Current Team of Player - TEXT
-        2017-18 -- Salaries for season - FLOAT
-        2018-19 -- Salaries for season - FLOAT
-        2019-20 -- Salaries for season - FLOAT
-        2020-21 -- Salaries for season - FLOAT
-        2021-22 -- Salaries for season - FLOAT
-        2022-23 -- Salaries for season - FLOAT
+        Year_Zero -- 2017-18 season - FLOAT
+        Year_One -- 2018-19 season - FLOAT
+        Year_Two -- 2019-20 season - FLOAT
+        Year_Three -- 2020-21 season - FLOAT
+        Year_Four -- 2021-22 season - FLOAT
+        Year_Five -- 2022-23 season - FLOAT
         Signed Using -- Trading method by which a player was signed on - TEXT
         Guaranteed -- The amount of a player's remaining salary that is guaranteed -- FLOAT
 
@@ -67,12 +67,12 @@ DATABASE: basketball
         FG_per_G -- Field Goals Per Game -- FLOAT
         FGA_per_G -- Field Goal Attempts Per Game -- FLOAT
         FG_Perc -- Field Goal Percentage -- FLOAT
-        3P_per_G -- 3-Point Field Goals Per Game -- FLOAT
-        3PA_per_G -- 3-Point Field Goal Attempts Per Game -- FLOAT
-        3P_Perc -- 3-Point Field Goal Percentage -- FLOAT
-        2P_per_G -- 2-Point Field Goals Per Game -- FLOAT
-        2PA_per_G -- 2-Point Field Goal Attempts Per Game -- FLOAT
-        2P_Perc -- 2-Point Field Goal Percentage -- FLOAT
+        Three_per_G -- 3-Point Field Goals Per Game -- FLOAT
+        Three_Att_per_G -- 3-Point Field Goal Attempts Per Game -- FLOAT
+        Three_Perc -- 3-Point Field Goal Percentage -- FLOAT
+        Two_per_G -- 2-Point Field Goals Per Game -- FLOAT
+        Two_Att_per_G -- 2-Point Field Goal Attempts Per Game -- FLOAT
+        Two_Perc -- 2-Point Field Goal Percentage -- FLOAT
         EFG_Perc -- Effective Field Goal Percentage -- FLOAT
                 This statistic adjusts for the fact that a 3-point field goal is worth one more point than a 2-point field goal
         FT_per_G -- Free Throws Per Game -- FLOAT
@@ -84,16 +84,16 @@ DATABASE: basketball
         AST_per_G -- Assists Per Game -- FLOAT
         STL_per_G -- Steals Per Game -- FLOAT
         BLK_per_G -- Blocks Per Game -- FLOAT
+        All_Star -- All Star status, 1 if they were all star at some point in career, 0 if not
         TOV_per_G -- Turnovers Per Game -- FLOAT
         PF_per_G -- Personal Fouls Per Game --- FLOAT
-        All_Star -- All Star status, 1 if they were all star at some point in career, 0 if not
         PER -- Player Efficiency Rating - FLOAT
                 A measure of per-minute production standardized such that the league average is 15
         WS -- Win Shares -- FLOAT
                 An estimate of the number of wins contributed by a player
-        Recent_Salary -- Salary for the 2016-2017 season
-        Salary_Year -- Year of player's recent salary
-        Salary_Team -- Team that issued salary to player
+        Recent_Salary -- Salary for the 2016-2017 season -- FLOAT
+        Salary_Year -- Year of player's recent salary -- INTEGER
+        Salary_Team -- Team that issued salary to player -- TEXT
 
     TABLE: nba_all_career
         Player -- Player Name -- TEXT
@@ -114,12 +114,12 @@ DATABASE: basketball
         FG_per_G -- Field Goals Per Game -- FLOAT
         FGA_per_G -- Field Goal Attempts Per Game -- FLOAT
         FG_Perc -- Field Goal Percentage -- FLOAT
-        3P_per_G -- 3-Point Field Goals Per Game -- FLOAT
-        3PA_per_G -- 3-Point Field Goal Attempts Per Game -- FLOAT
-        3P_Perc -- 3-Point Field Goal Percentage -- FLOAT
-        2P_per_G -- 2-Point Field Goals Per Game -- FLOAT
-        2PA_per_G -- 2-Point Field Goal Attempts Per Game -- FLOAT
-        2P_Perc -- 2-Point Field Goal Percentage -- FLOAT
+        Three_per_G -- 3-Point Field Goals Per Game -- FLOAT
+        Three_Att_per_G -- 3-Point Field Goal Attempts Per Game -- FLOAT
+        Three_Perc -- 3-Point Field Goal Percentage -- FLOAT
+        Two_per_G -- 2-Point Field Goals Per Game -- FLOAT
+        Two_Att_per_G -- 2-Point Field Goal Attempts Per Game -- FLOAT
+        Two_Perc -- 2-Point Field Goal Percentage -- FLOAT
         EFG_Perc -- Effective Field Goal Percentage -- FLOAT
                 This statistic adjusts for the fact that a 3-point field goal is worth one more point than a 2-point field goal
         FT_per_G -- Free Throws Per Game -- FLOAT
@@ -131,20 +131,40 @@ DATABASE: basketball
         AST_per_G -- Assists Per Game -- FLOAT
         STL_per_G -- Steals Per Game -- FLOAT
         BLK_per_G -- Blocks Per Game -- FLOAT
+        All_Star -- All Star status, 1 if they were all star at some point in career, 0 if not
         TOV_per_G -- Turnovers Per Game -- FLOAT
         PF_per_G -- Personal Fouls Per Game --- FLOAT
-        All_Star -- All Star status, 1 if they were all star at some point in career, 0 if not
         PER -- Player Efficiency Rating - FLOAT
                 A measure of per-minute production standardized such that the league average is 15
         WS -- Win Shares -- FLOAT
                 An estimate of the number of wins contributed by a player
-        Recent_Salary -- Salary for the 2016-2017 season
-        Salary_Year -- Year of player's recent salary
-        Salary_Team -- Team that issued salary to player
+        Recent_Salary -- Salary for the 2016-2017 season -- FLOAT
+        Salary_Year -- Year of player's recent salary -- INTEGER
+        Salary_Team -- Team that issued salary to player -- TEXT
 
 
-
-
-
-
-
+    TABLE: ncaa
+        Player -- Player Name -- TEXT
+        Position -- Position - TEXT
+        Height_inches -- Height of player -- INTEGER
+        Weight_lbs -- Weight of player -- FLOAT
+        College -- College that player played at -- TEXT
+        Draft_Year -- Year player was drafted -- INTEGER
+        Years_in_college -- Number of years played in college - INTEGER
+        G -- Games -- INTEGER
+        MP_per_G -- Minutes Played Per Game -- FLOAT
+        PTS_per_G -- Points Per Game -- FLOAT
+        FG_Perc -- Field Goal Percentage -- FLOAT
+        Three_Perc -- 3-Point Field Goal Percentage -- FLOAT
+        EFG_Perc -- Effective Field Goal Percentage -- FLOAT
+                This statistic adjusts for the fact that a 3-point field goal is worth one more point than a 2-point field goal
+        FT_Perc -- Free Throw Percentage -- FLOAT
+        TRB_per_G -- Total Rebounds Per Game -- FLOAT
+        AST_per_G -- Assists Per Game -- FLOAT
+        STL_per_G -- Steals Per Game -- FLOAT
+        BLK_per_G -- Blocks Per Game -- FLOAT
+        TOV_per_G -- Turnovers Per Game -- FLOAT
+        PER -- Player Efficiency Rating - FLOAT
+                A measure of per-minute production standardized such that the league average is 15
+        WS -- Win Shares -- FLOAT
+                An estimate of the number of wins contributed by a player
