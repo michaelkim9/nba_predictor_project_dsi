@@ -59,41 +59,39 @@ DATABASE: basketball
         Draft_Position -- Rank in draft -- INTEGER
         Season_Count -- Number of seasons played in NBA - INTEGER
         Age -- Age of Player at the start of February 1st of that season -- INTEGER
-        Current_Team -- Team -- TEXT
         G -- Games -- INTEGER
         GS -- Games Started -- INTEGER
-        MP_per_G -- Minutes Played Per Game -- FLOAT
-        PTS_per_G -- Points Per Game -- FLOAT
-        FG_per_G -- Field Goals Per Game -- FLOAT
-        FGA_per_G -- Field Goal Attempts Per Game -- FLOAT
+        MP -- Minutes Played -- FLOAT
+        FG-- Field Goals -- FLOAT
+        FGA -- Field Goal Attempts -- FLOAT
         FG_Perc -- Field Goal Percentage -- FLOAT
-        Three_per_G -- 3-Point Field Goals Per Game -- FLOAT
-        Three_Att_per_G -- 3-Point Field Goal Attempts Per Game -- FLOAT
+        Three_P-- 3-Point Field Goals -- FLOAT
+        Three_Att -- 3-Point Field Goal Attempts -- FLOAT
         Three_Perc -- 3-Point Field Goal Percentage -- FLOAT
-        Two_per_G -- 2-Point Field Goals Per Game -- FLOAT
-        Two_Att_per_G -- 2-Point Field Goal Attempts Per Game -- FLOAT
+        Two_P -- 2-Point Field Goals -- FLOAT
+        Two_Att -- 2-Point Field Goal Attempts -- FLOAT
         Two_Perc -- 2-Point Field Goal Percentage -- FLOAT
         EFG_Perc -- Effective Field Goal Percentage -- FLOAT
                 This statistic adjusts for the fact that a 3-point field goal is worth one more point than a 2-point field goal
-        FT_per_G -- Free Throws Per Game -- FLOAT
-        FTA_per_G -- Free Throw Attempts Per Game -- FLOAT
+        FT -- Free Throws -- FLOAT
+        FTA -- Free Throw Attempts -- FLOAT
         FT_Perc -- Free Throw Percentage -- FLOAT
-        ORB_per_G -- Offensive Rebounds Per Game -- FLOAT
-        DRB_per_G -- Defensive Rebounds Per Game -- FLOAT
-        TRB_per_G -- Total Rebounds Per Game -- FLOAT
-        AST_per_G -- Assists Per Game -- FLOAT
-        STL_per_G -- Steals Per Game -- FLOAT
-        BLK_per_G -- Blocks Per Game -- FLOAT
+        ORB -- Offensive Rebounds -- FLOAT
+        DRB -- Defensive Rebounds  -- FLOAT
+        TRB -- Total Rebounds -- FLOAT
+        AST -- Assists -- FLOAT
+        STL -- Steals -- FLOAT
+        BLK -- Blocks -- FLOAT
         All_Star -- All Star status, 1 if they were all star at some point in career, 0 if not
-        TOV_per_G -- Turnovers Per Game -- FLOAT
-        PF_per_G -- Personal Fouls Per Game --- FLOAT
+        TOV -- Turnovers -- FLOAT
+        PF -- Personal Fouls --- FLOAT
+        PTS -- Points -- FLOAT
         PER -- Player Efficiency Rating - FLOAT
                 A measure of per-minute production standardized such that the league average is 15
         WS -- Win Shares -- FLOAT
                 An estimate of the number of wins contributed by a player
         Recent_Salary -- Salary for the 2016-2017 season -- FLOAT
-        Salary_Year -- Year of player's recent salary -- INTEGER
-        Salary_Team -- Team that issued salary to player -- TEXT
+
 
     TABLE: nba_all_career
         Player -- Player Name -- TEXT
