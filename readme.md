@@ -1,5 +1,4 @@
-# Open Court
-##Predicting NBA Salaries Using Machine Learning
+# Open Court: Predicting NBA Salaries Using Machine Learning
 #### Please see "Technical_Report" for summary of this project
 
 In an effort to get an idea of what NBA players are worth, judging strictly on quantative data, I am building a model to estimate player salaries based on on-the-court performance. The project is called "Open Court".
